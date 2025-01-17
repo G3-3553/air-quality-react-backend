@@ -96,11 +96,6 @@ SoundFile==0.10.3.post1
 SpeechRecognition==3.10.0
 stack-data==0.6.2
 sympy==1.12
-tensorboard==2.12.3
-tensorflow
-tensorflow-estimator
-tensorflow-intel
-tensorflow-io-gcs-filesystem==0.32.0
 termcolor==2.3.0
 threadpoolctl==3.1.0
 torch==2.0.1
