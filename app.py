@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+from flask import send_from_directory
 from flask_cors import CORS
 import pickle
 import numpy as np
@@ -12,9 +13,14 @@ CORS(app)  # Enable CORS for all routes
 model = pickle.load(open("air_quality.pkl", "rb"))
 scaler = pickle.load(open("scaler.pkl", "rb"))
 
+    
 @app.route('/')
 def home():
     return "Backend is running!"
+
+@app.route('/assets/<path:filename>')
+def static_files(filename):
+    return send_from_directory('dist/assets', filename, mimetype='text/css')
 
 @app.route('/predict', methods=['POST'])
 def predict():
